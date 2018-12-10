@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sara Taha, Horrible Cop, Launches Site"
+title: "Sara Taha, Launches Site"
 date: 2017-08-03
 ---
 
