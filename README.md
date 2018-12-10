@@ -1,3 +1,3 @@
 sarataha.github.io
 =====================
-Personal Website
+Personal website
