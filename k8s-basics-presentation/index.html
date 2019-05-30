@@ -107,9 +107,9 @@ Available Commands:
 							<li>Containers</li>
 							<li>Nodes</li>
 							<li>Pods</li>
-							<li>Labels</li>
+							<li>Controllers</li>
 							<li>Services</li>
-							<li>Storage</li>
+							<li>Persistent Volumes</li>
 						</ul>
 					</p>
 				</section>
@@ -166,12 +166,12 @@ EXPOSE 8000
 				</section>
 
 				<section>
-					<h2>Replication Controller</h2>
+					<h2>Controllers</h2>
 					<p>Manages a replicated set of pods<br />
 						<ul>
-							<li>Creates pods from a template</li>
-							<li>Makes sure the desired number of pods are running</li>
-							<li>Self-healing</li>
+							<li>Deployment: Used for stateless apps</li>
+							<li>StatefulSet: Used for statefull apps</li>
+							<li>DaemonSet: Ensures that pods are running on all cluster nodes</li>
 						</ul>
 					</p>
 				</section>
@@ -196,6 +196,38 @@ EXPOSE 8000
 							<li>PersistentVolume (PV)</li>
 							<li>PersistentVolumeClaim (PVC)</li>
 						</ul>
+					</p>
+				</section>
+				
+				<section>
+					<h2>Deployment</h2>
+					<p>
+						<pre><code>
+controllers/nginx-deployment.yaml 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+
+						</code></pre>
 					</p>
 				</section>
 				
