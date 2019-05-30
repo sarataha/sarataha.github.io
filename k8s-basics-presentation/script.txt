@@ -13,6 +13,8 @@ kubectl get nodes
 kubectl get pods
 kubectl get services
 
+## Deploy microservices to K8S
+
 
 ## Install and Scale an RC Manifest
 
