@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ijulia
+  name: k8s-basics
 spec:
   ports:
     - name: http
       port: 8080
       targetPort: 8888
   selector:
-    app: ijulia
+    app: k8s-basics
   type: LoadBalancer

@@ -18,25 +18,25 @@ kubectl get services
 
 ## Install and Scale an RC Manifest
 
-cat manifests/ijulia-rc.yaml
-kubectl create -f manifests/ijulia-rc.yaml
-kubectl describe rc ijulia
+cat manifests/k8s-basics-rc.yaml
+kubectl create -f manifests/k8s-basics-rc.yaml
+kubectl describe rc k8s-basics
 kubectl get pods
 kubectl describe pod <pod_id>
 kubectl logs -f <pod_id>
 kubectl exec <pod> -- ls -alh
-kubectl scale rc ijulia --replicas=4
+kubectl scale rc k8s-basics --replicas=4
 kubectl get pods --output=wide
 curl http://10.245.1.3:8888
-cat manifests/ijulia-svc.yaml
-kubectl create -f manifests/ijulia-svc.yaml
+cat manifests/k8s-basics-svc.yaml
+kubectl create -f manifests/k8s-basics-svc.yaml
 kubectl get service
-kubectl get service ijulia -o yaml
+kubectl get service k8s-basics -o yaml
 curl -sS http://10.245.1.3:<port>/tree
 # open in browser
 # cleanup
-kubectl delete svc ijulia
-kubectl delete rc ijulia
+kubectl delete svc k8s-basics
+kubectl delete rc k8s-basics
 
 
 ## Install Deis v2 alpha
