@@ -184,22 +184,20 @@ EXPOSE 8000
 					<script type="text/javascript" src="https://asciinema.org/a/34188.js" id="asciicast-34188" data-size="medium" data-theme="monokai" async></script>
 					--->
 					<p>
-					<pre>
-					<code>
-						export NUM_MINIONS=2
-						export KUBERNETES_PROVIDER=vagrant
-						curl -sS https://get.k8s.io | bash
-						cd kubernetes/
-						ls
-						cd cluster/
-						ln -s kubectl.sh kubectl
-						export PATH=`pwd`:$PATH
+					<pre><code class="bash" data-trim contenteditable>
+export NUM_MINIONS=2
+export KUBERNETES_PROVIDER=vagrant
+curl -sS https://get.k8s.io | bash
+cd kubernetes/
+ls
+cd cluster/
+ln -s kubectl.sh kubectl
+export PATH=`pwd`:$PATH
 
-						kubectl get nodes
-						kubectl get pods
-						kubectl get services
-						</code>
-						</pre>
+kubectl get nodes
+kubectl get pods
+kubectl get services
+						</code></pre>
 					</p>
 				</section>
 
@@ -209,9 +207,8 @@ EXPOSE 8000
 					<script type="text/javascript" src="https://asciinema.org/a/34277.js" id="asciicast-34277" data-size="medium" data-theme="monokai" async></script>
 					--->
 					<p>
-					<pre>
-					<code>
-						cat manifests/k8s-basics-rc.yaml
+					<pre><code class="bash" data-trim contenteditable>
+cat manifests/k8s-basics-rc.yaml
 kubectl create -f manifests/k8s-basics-rc.yaml
 kubectl describe rc k8s-basics
 kubectl get pods
@@ -230,8 +227,7 @@ curl -sS http://10.245.1.3:<port>/tree
 # cleanup
 kubectl delete svc k8s-basics
 kubectl delete rc k8s-basics
-</code>
-</pre>
+</code></pre>
 					</p>
 				</section>
 
