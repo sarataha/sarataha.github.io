@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test - Cloud Storage Image</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 40px; }
+        .status { padding: 20px; background: #fff3e0; border-radius: 8px; margin: 20px 0; }
+        img { max-width: 200px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Test C - Cloud Storage Image</h1>
+    <div class="status">
+        <p>Trying to load image from storage.cloud.google.com</p>
+        <img src="https://storage.cloud.google.com/cloud-samples-data/ai-platform/hello.txt"
+             alt="GCS resource"
+             onerror="this.alt='FAILED TO LOAD'" />
+    </div>
+    <p>If resource loads, GCS is accessible.</p>
+</body>
+</html>
