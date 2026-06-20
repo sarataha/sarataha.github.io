@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sara Taha, Launches Site"
+title: "Site Launched"
 date: 2017-08-03
 ---
 

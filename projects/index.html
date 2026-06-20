@@ -1,34 +1,43 @@
 ---
 layout: default
-title: Projects of Sara Taha
+title: Projects — Sara Elzayat
+description: Projects by Sara Elzayat — Kubernetes operators, infrastructure and tooling.
 ---
 
-	<div class="cv">
-		<a href="#" class="download" title="Download CV as PDF">Download CV</a>			
-					<h1>My Projects</h1>
+<div class="projects">
+  <h1>Projects</h1>
 
-					<h2>
-						<a href="https://github.com/sarataha/cinema-to-go" class="porject">CINEMA TO GO</a>
-					</h2>
-					<p>Microservices architecture using Go, Kafka, Docker and MongoDB</p>
-					
-					<h2>
-						<a href="https://github.com/sarataha/cinema-to-go" class="project">Yalla Netlob</a>
-					</h2><br><br>
-					<p>A NodeJS application for group food ordering</p>
-					
-					<h2>
-						<a href="https://github.com/sarataha/cinema-to-go" class="project">Word Collector</a>
-					</h2><br><br>
-					<p>A word based javascript game</p>
+  <div class="card">
+    <h3><a href="https://github.com/sarataha/warmrunners">warmrunners</a></h3>
+    <p>
+      A Kubernetes operator that keeps self-hosted GitHub Actions runners warm only when
+      they'll be needed — scheduled windows, predictive pre-warming of downstream pools, and
+      live CI-activity scaling. Works with ARC and GARM.
+    </p>
+    <p class="stack">Go · Kubernetes operator · Helm/OCI · Cosign-signed releases · SBOM</p>
+  </div>
 
-					<h2>
-						<a href="https://github.com/sarataha/docker-jenkins-java-pipeline" class="project">Docker-Jenkins-Java Pipeline</a>
-					</h2><br><br>
-					<p>A CICD pipeline for Java using Docker and Jenkins</p>
+  <div class="card">
+    <h3><a href="https://github.com/sarataha/changelog">changelog</a></h3>
+    <p>
+      A command-line tool that turns raw Linux logs into readable incident timelines, using AI to
+      interpret and correlate events across sources (journalctl, auditd, and more).
+    </p>
+    <p class="stack">Go · AI · incident analysis</p>
+  </div>
 
-					<h2>
-						<a href="https://github.com/sarataha/aws-docker-swarm-cluster" class="project">AWS Docker Swarm Cluster</a>
-					</h2><br><br>
-					<p>A Docker Swarm cluster on AWS using Terraform</p>
-	</div>
+  <h2>Open source</h2>
+  <div class="entry">
+    <h3><a href="https://github.com/weaveworks/weave-gitops-enterprise">weave-gitops-enterprise</a></h3>
+    <p>
+      Contributed to Weaveworks' enterprise GitOps platform for Kubernetes — cluster lifecycle
+      management via Cluster API and team workspaces. Go.
+    </p>
+  </div>
+
+  <h2>Talks</h2>
+  <div class="entry">
+    <h3><a href="https://sarataha.github.io/k8s-basics-presentation/">Kubernetes Basics</a></h3>
+    <p>An introduction to Kubernetes.</p>
+  </div>
+</div>
