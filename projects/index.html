@@ -1,11 +1,22 @@
 ---
 layout: default
 title: Projects — Sara Elzayat
-description: Projects by Sara Elzayat — Kubernetes operators, infrastructure and tooling.
+description: Projects by Sara Elzayat — AI coding agent workflows, Kubernetes operators, infrastructure and tooling.
 ---
 
 <div class="projects">
   <h1>Projects</h1>
+
+  <div class="card">
+    <h3><a href="https://github.com/sarataha/agent-kit">agent-kit</a></h3>
+    <p>
+      A Claude Code setup for running coding agents mostly on their own: spec, build, CI and
+      review loops, and a risk check before merge. Acceptance tests are written by a separate
+      agent and locked by hooks, review never comes from the session that wrote the code, and
+      risky paths and merges stay with a human.
+    </p>
+    <p class="stack">Python · Claude Code · hooks · multi-agent worktrees · OpenCode</p>
+  </div>
 
   <div class="card">
     <h3><a href="https://github.com/sarataha/warmrunners">warmrunners</a></h3>
