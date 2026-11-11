@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Comparing four Postgres connection poolers: memory, throughput, failure modes"
+title: "Comparing four Postgres connection poolers"
 date: 2026-06-28
 ---
 
