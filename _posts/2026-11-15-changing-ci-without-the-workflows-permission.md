@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Changing CI without the Workflows permission"
-date: 2026-11-16
+date: 2026-11-15
 ---
 
 A GitHub App installed without the Workflows permission can't push to `.github/workflows` but it can push to `.github/actions` and CI runs those composite actions on any branch it builds. So an agent holding that token can change what CI executes on its own branch before anyone reviews the PR.
