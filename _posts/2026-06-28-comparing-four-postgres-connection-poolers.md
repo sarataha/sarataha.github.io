@@ -102,20 +102,15 @@ pooler and not the disk.
 
 ## Pooling modes
 
-I ran every test in transaction mode. The three pooling modes differ in
-when the pooler hands a server connection back to the pool.
+I ran every test in transaction mode. The modes differ in when the
+pooler hands a server connection back: session pooling at disconnect,
+so a hundred idle clients hold a hundred server connections;
+transaction pooling at the end of each transaction; statement pooling
+after every statement, which rules out multi-statement transactions.
 
-Session pooling keeps one server connection tied to a client for as
-long as it stays connected. It is the safest, because the client gets a
-real private session, but it pools the least: a hundred idle clients
-hold a hundred server connections. Transaction pooling hands the
-connection back at the end of each transaction, so a handful of
-connections serve many clients. Statement pooling hands it back after
-every statement and refuses multi-statement transactions outright.
-
-I used transaction mode because it pools well without breaking ordinary
-transactions, which is why most people run it. Anything that expects a
-stable session breaks, because the next statement may land on a
+Transaction mode pools well without breaking ordinary transactions,
+which is why most people run it. What it does break is anything
+expecting a stable session, because the next statement may land on a
 different backend: session-level `SET`, advisory locks,
 `LISTEN`/`NOTIFY`, and server-side prepared statements, which is the
 whole reason the prepared-statement section below exists. PgBouncer,
