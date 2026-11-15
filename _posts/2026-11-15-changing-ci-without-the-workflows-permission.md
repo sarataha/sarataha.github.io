@@ -42,11 +42,15 @@ jobs:
       - uses: ./.github/actions/tool
 ```
 
-The App changed only that action on a `test/agent` branch. Two CI runs on that branch before and after:
+The App changed only that action on a `test/agent` branch. Two CI runs on that branch, before and after that commit.
 
-![CI before the change: MARKER tool version = MAIN](/assets/changing-ci-without-the-workflows-permission/3a-ci-main.png)
+Before:
 
-![CI after the App's change: MARKER tool version = BRANCH (agent)](/assets/changing-ci-without-the-workflows-permission/3b-ci-agent.png)
+![CI run on the branch as created from main, printing MARKER tool version = MAIN](/assets/changing-ci-without-the-workflows-permission/3a-ci-main.png)
+
+After:
+
+![CI run after the App's commit, printing MARKER tool version = BRANCH (agent)](/assets/changing-ci-without-the-workflows-permission/3b-ci-agent.png)
 
 Whatever that job can reach, the App's code can reach: its token, anything the workflow passes in, any cloud identity the job assumes. I didn't test those here.
 
