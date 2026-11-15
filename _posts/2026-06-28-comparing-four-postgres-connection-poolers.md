@@ -484,13 +484,14 @@ Summary
 
 `direct` is 11.3 s give or take 5.2 s. That's a 46% swing on five runs
 of the same command. `pgpool` is the only tight result here, and the
-fastest at this client count. `pgbouncer` is single-threaded and runs
-clients in series, so it's almost eight times slower. The rough order
+fastest at this client count. `pgbouncer` is
+[single-threaded and uses one CPU core per instance](https://www.pgbouncer.org/config.html#so_reuseport),
+where pgpool has a hundred preforked workers and can use all six. That's
+the likeliest reason it lands almost eight times slower. The rough order
 is real. The fine order is not: is `direct` really slower than
 `odyssey`? The error bars overlap, so I won't say. I ran the whole set
-of tests four times before I trusted it, and the spread is why. So I
-show the spread, not a clean leaderboard, because the spread is what I
-measured.
+of tests four times before I trusted it. That's why this section is a
+spread and not a leaderboard.
 
 The full output for Odyssey at 100 clients shows something the TPS
 figure alone doesn't:
