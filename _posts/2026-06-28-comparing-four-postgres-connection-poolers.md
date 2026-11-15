@@ -102,20 +102,15 @@ pooler and not the disk.
 
 ## Pooling modes
 
-I ran every test in transaction mode. The three pooling modes differ in
-when the pooler hands a server connection back to the pool.
+I ran every test in transaction mode. The modes differ in when the
+pooler hands a server connection back: session pooling at disconnect,
+so a hundred idle clients hold a hundred server connections;
+transaction pooling at the end of each transaction; statement pooling
+after every statement, which rules out multi-statement transactions.
 
-Session pooling keeps one server connection tied to a client for as
-long as it stays connected. It is the safest, because the client gets a
-real private session, but it pools the least: a hundred idle clients
-hold a hundred server connections. Transaction pooling hands the
-connection back at the end of each transaction, so a handful of
-connections serve many clients. Statement pooling hands it back after
-every statement and refuses multi-statement transactions outright.
-
-I used transaction mode because it pools well without breaking ordinary
-transactions, which is why most people run it. Anything that expects a
-stable session breaks, because the next statement may land on a
+Transaction mode pools well without breaking ordinary transactions,
+which is why most people run it. What it does break is anything
+expecting a stable session, because the next statement may land on a
 different backend: session-level `SET`, advisory locks,
 `LISTEN`/`NOTIFY`, and server-side prepared statements, which is the
 whole reason the prepared-statement section below exists. PgBouncer,
@@ -484,13 +479,14 @@ Summary
 
 `direct` is 11.3 s give or take 5.2 s. That's a 46% swing on five runs
 of the same command. `pgpool` is the only tight result here, and the
-fastest at this client count. `pgbouncer` is single-threaded and runs
-clients in series, so it's almost eight times slower. The rough order
+fastest at this client count. `pgbouncer` is
+[single-threaded and uses one CPU core per instance](https://www.pgbouncer.org/config.html#so_reuseport),
+where pgpool has a hundred preforked workers and can use all six. That's
+the likeliest reason it lands almost eight times slower. The rough order
 is real. The fine order is not: is `direct` really slower than
 `odyssey`? The error bars overlap, so I won't say. I ran the whole set
-of tests four times before I trusted it, and the spread is why. So I
-show the spread, not a clean leaderboard, because the spread is what I
-measured.
+of tests four times before I trusted it. That's why this section is a
+spread and not a leaderboard.
 
 The full output for Odyssey at 100 clients shows something the TPS
 figure alone doesn't:
