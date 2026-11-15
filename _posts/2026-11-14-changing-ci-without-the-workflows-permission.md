@@ -11,7 +11,7 @@ A GitHub App installed without the Workflows permission can't push to `.github/w
 
 The App has code write access and no Workflows permission. It's installed on one scratch repo.
 
-[GitHub's docs](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app) say the Workflows permission covers "Actions files in the `.github/workflows` directory". One directory. Workflows also call composite actions in `.github/actions/`.
+[GitHub's docs](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app) say the Workflows permission covers "Actions files in the `.github/workflows` directory". That folder and nothing else. Workflows also call composite actions in `.github/actions/`.
 
 ## Pushing as the App
 
