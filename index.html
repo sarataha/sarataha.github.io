@@ -12,6 +12,16 @@ description: Sara Elzayat — Platform engineer. I build the infrastructure thin
 </section>
 
 <section>
+  <h2>Latest posts</h2>
+  <ul class="posts">
+    {% for post in site.posts limit:3 %}
+      <li><span class="date">{{ post.date | date_to_string }}</span><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <p><a href="/blog">All posts →</a></p>
+</section>
+
+<section>
   <h2>Featured project</h2>
   <div class="card">
     <h3><a href="https://github.com/sarataha/warmrunners">warmrunners</a></h3>
