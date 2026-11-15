@@ -18,8 +18,6 @@ The App has code write access and no Workflows permission. It's installed on one
 
 I pushed a harmless file to 3 paths as the App then checked with admin token which ones landed.
 
-![denyprobe output: workflows push refused, actions push landed](/assets/changing-ci-without-the-workflows-permission/2-terminal.png)
-
 ```
 PASS     allowed  denyprobe/control.txt
 PASS     denied   .github/workflows/denyprobe-canary.yml
