@@ -11,7 +11,7 @@ A GitHub App installed without the Workflows permission can't push to `.github/w
 
 The App has code write access and no Workflows permission. It's installed on one scratch repo.
 
-[GitHub's docs](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app) say the Workflows permission covers "Actions files in the `.github/workflows` directory". That folder and nothing else. Workflows also call composite actions in `.github/actions/`.
+[GitHub's docs](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app) say the Workflows permission covers "Actions files in the `.github/workflows` directory". That directory and nothing else. Workflows also call composite actions in `.github/actions/`.
 
 ## Pushing as the App
 
@@ -55,7 +55,7 @@ Whatever that job can reach, the App's code can reach: its token, anything the w
 
 ## Background
 
-OWASP calls this [indirect poisoned pipeline execution](https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-04-Poisoned-Pipeline-Execution): changing files the pipeline calls. Any script or Makefile works the same way. `.github/actions` isn't special either it's just the folder [the docs recommend](https://docs.github.com/en/actions/tutorials/create-actions/create-a-composite-action) for organisation. A composite action can live anywhere in the repo. What I'd missed is that the Workflows permission doesn't touch it. I didn't report it to GitHub, since the permission does what the docs say.
+OWASP calls this [indirect poisoned pipeline execution](https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-04-Poisoned-Pipeline-Execution): changing files the pipeline calls. Any script or Makefile works the same way. `.github/actions` isn't special either it's just the directory [the docs recommend](https://docs.github.com/en/actions/tutorials/create-actions/create-a-composite-action) for organisation. A composite action can live anywhere in the repo. What I'd missed is that the Workflows permission doesn't touch it. I didn't report it to GitHub, since the permission does what the docs say.
 
 What I do now: treat code write access as "can run code in CI" and keep jobs with real credentials waiting for a person on agent branches.
 
