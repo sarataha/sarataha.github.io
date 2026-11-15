@@ -138,5 +138,26 @@ ul.posts .date { color: var(--muted); font-size: 0.9rem; margin-right: 0.5rem; }
 .post { margin-top: 1rem; }
 .meta { color: var(--muted); font-size: 0.9rem; margin-top: -0.25rem; }
 
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.post table { border-collapse: collapse; max-width: 100%; margin: 1.5rem 0; font-size: 0.95rem; }
+.post th, .post td { border-bottom: 1px solid var(--border); padding: 0.4rem 1rem 0.4rem 0; }
+.post thead th { border-bottom: 2px solid var(--border); }
+.post tbody tr:last-child td { border-bottom: 0; }
+
+.post blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+}
+
 code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
 pre { background: rgba(127,127,127,0.12); padding: 1rem; border-radius: 8px; overflow-x: auto; }
