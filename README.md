@@ -1,6 +1,6 @@
 # sarataha.github.io
 
-Personal website of Sara Elzayat — Platform & Site Reliability Engineer.
+Personal website of Sara Elzayat, Platform & Site Reliability Engineer.
 
 Built with [Jekyll](https://jekyllrb.com) and deployed via GitHub Pages.
 
