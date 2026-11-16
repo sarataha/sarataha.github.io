@@ -3,3 +3,6 @@ description: Platform & Site Reliability Engineer — Kubernetes, observability 
 url: https://sarataha.github.io
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+
+plugins:
+  - jekyll-sitemap
