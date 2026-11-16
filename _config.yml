@@ -1,5 +1,8 @@
 name: Sara Elzayat
-description: Platform & Site Reliability Engineer — Kubernetes, observability and production AI systems.
+description: Platform & Site Reliability Engineer. Kubernetes, observability and production AI systems.
 url: https://sarataha.github.io
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+
+plugins:
+  - jekyll-sitemap

@@ -7,7 +7,7 @@
   --max: 680px;
 }
 
-/* Dark palette — shared by explicit toggle and OS preference */
+/* Dark palette, shared by explicit toggle and OS preference */
 html[data-theme="dark"] {
   --text: #e8e8e8;
   --muted: #9a9a9a;
